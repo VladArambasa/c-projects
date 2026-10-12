@@ -1,0 +1,5 @@
+A text file is made of lines.
+Every line ends with the Enter key.
+
+This file has five lines
+and the third one is empty.

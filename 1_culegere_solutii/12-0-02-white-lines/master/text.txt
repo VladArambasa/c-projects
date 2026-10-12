@@ -1,0 +1,6 @@
+This line has words.
+
+The line above is white.
+	This line starts with a tab, but it has words too.
+
+Lines 2 and 5 are the white ones.

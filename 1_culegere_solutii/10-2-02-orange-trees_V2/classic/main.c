@@ -1,0 +1,44 @@
+/* CULEGERE X.2.2 - THE ORANGE TREES (ONI 2003, CLASS VII) (V2)
+ * N ORANGE TREES WITH FRUIT STAND ON A CIRCLE, NUMBERED 1..N CLOCKWISE. STARTING FROM TREE M
+ * (WHICH COUNTS AS 1), GINO COUNTS CLOCKWISE K TREES THAT STILL HAVE FRUIT AND PICKS ALL THE
+ * FRUIT OF THE K-TH ONE; HE STARTS COUNTING AGAIN FROM THE NEXT TREE WITH FRUIT. THE LAST TREE
+ * LEFT, P, BECOMES HIS SHELTER. WHICH TREE M MUST HE START FROM SO THAT THE SHELTER IS TREE P?
+ * PORTOCAL.IN: N K P (2 <= N <= 1000, 1 <= K <= 10000); PORTOCAL.OUT: M
+ * EXAMPLE: 6 8 5 -> 3
+ * V2: NO GAME IS PLAYED FOR EVERY START: THE JOSEPHUS RULE GIVES THE ANSWER IN N SMALL STEPS */
+#include <stdio.h> /* PRINTF, FOPEN, FSCANF, FPRINTF, FCLOSE */
+
+int main(void)
+{
+	FILE *in = fopen("portocal.in", "r");
+	FILE *out;
+	int n = 0, k = 0, p = 0, i, last, m;
+
+	if (in == NULL)
+	{
+		printf("Cannot open portocal.in\n");
+		return 1;
+	}
+	fscanf(in, "%d %d %d", &n, &k, &p);
+	fclose(in);
+
+	/* PLACES ARE COUNTED FROM 0, AND THE COUNTING STARTS ON PLACE 0.
+	 * LAST = PLACE OF THE LAST TREE LEFT WHEN THERE ARE I TREES (WITH ONE TREE IT IS 0) */
+	last = 0;
+	for (i = 2; i <= n; i++)
+	{
+		/* WITH I TREES THE FIRST PICK IS ON PLACE (K - 1) % I AND THE COUNTING GOES ON
+		 * FROM PLACE K % I: THE REST IS THE GAME WITH I - 1 TREES,
+		 * MOVED K PLACES FURTHER ON THE CIRCLE */
+		last = (last + k) % i;
+	}
+	/* STARTING FROM TREE 1, THE SHELTER IS TREE LAST + 1; STARTING FROM M MOVES IT
+	 * M - 1 TREES FURTHER, SO WE NEED LAST + M = P (GOING ROUND THE CIRCLE) */
+	m = (p - 1 - last + n) % n + 1;
+
+	out = fopen("portocal.out", "w");
+	fprintf(out, "%d\n", m);
+	fclose(out);
+
+	return 0;
+}

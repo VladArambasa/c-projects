@@ -1,0 +1,9 @@
+/* HELLO WORLD: THE SMALLEST COMPLETE C PROGRAM */
+#include "master.h" /* ALL THE HEADERS, IN ONE PLACE */
+
+int main(void) /* EXECUTION STARTS HERE */
+{
+	printf("Hello World!\n"); /* NEWLINE ENDS THE LINE */
+
+	return 0; /* 0 TELLS THE OPERATING SYSTEM THAT ALL WENT WELL */
+}

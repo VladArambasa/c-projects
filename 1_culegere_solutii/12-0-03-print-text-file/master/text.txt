@@ -1,0 +1,4 @@
+Roses are red,
+violets are blue,
+this file is shown
+line by line to you.

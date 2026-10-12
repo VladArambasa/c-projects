@@ -1,0 +1,4 @@
+This text will be copied
+into another file,
+line by line,
+	even the tab at the start of this line.
