@@ -1,0 +1,41 @@
+TAGS
+FOR 
+PRINTF AND SCANF
+
+1. INTEGER TYPES
+%d - signed decimal integer
+%i - signed decimal integer
+%u - unsigned decimal integer
+%o - unsigned octal
+%x - unsigned hexadecimal (lowercase)
+%X - unsigned hexadecimal (uppercase)
+%b - binary
+
+2. FLOATING POINT TYPES
+%f - decimal floating point
+%F - decimal floating point (as %f) but for special values
+						(INT, NAN)
+%e - scientific notation (e.g. 3.14e+00)
+%E - scientific notation - Uppercase E (e.g. 3.14E+00)
+%g - %f or %e depending on precision
+%G - %F or %E depending on precision
+
+3. CHARACTER AND STRING
+%c - single character
+%s - Null-terminated string
+
+4. POINTER
+%p - Pointer address
+
+5. SPECIAL
+%% - prints/outputs the % character
+
+6. LENGTH MODIFIERS
+h - short / unsigned short  (%hd, %hu)
+l - long / unsigned long   (%ld, %lu)
+ll - long long / unsigned long long (%lld, %llu)
+L - long double (%Lf)
+z - size_t (%zu) Unsigned result of sizeof
+j - intmax_t / uintmax_t (%ju, %jd) Maximum-width integer
+t - ptrdiff_t (%td) Result of pointer substraction
+
